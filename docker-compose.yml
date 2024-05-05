@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   apiserver:
-    image: python-docker:latest
+    image: check-in-timer:latest
     # entrypoint: "/bin/bash"
     entrypoint: "python3 -m flask --debug run --host=0.0.0.0"
     ports:
@@ -10,4 +10,4 @@ services:
     environment:
       - FLASK_ENV=development
     volumes:
-      - /c/Users/dvisb/linux/flask-api-server:/python-docker
+      - /c/Users/dvisb/linux/check-in-timer:/check-in-timer

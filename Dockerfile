@@ -2,10 +2,7 @@
 
 FROM python:3.8-slim-buster
 
-WORKDIR /python-docker
+WORKDIR /check-in-timer
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-
-CMD [ "/bin/bash" ]
-# CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
