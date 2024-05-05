@@ -24,11 +24,10 @@ def timeout_new():
 def timeout_check(timeout_id):
     return json.dumps(check_in_timers[timeout_id].check_in())
 
-# @app.route('/timeout/<timeout_id>/reset')
-# def reset():
-#     global check_in_timer
-#     check_in_timer = None
-#     return ""
+@app.route('/timeout/<timeout_id>/reset')
+def reset(timeout_id):
+    check_in_timers[timeout_id] = CheckInTimer(300) # reset the old timer with a new timer
+    return redirect(url_for('timeout_check', timeout_id=timeout_id))
 
 if __name__ == "__main__":
     app.run(debug=True)
