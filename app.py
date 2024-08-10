@@ -22,7 +22,7 @@ def timeout_new():
 
 @app.route('/timeout/<timeout_id>')
 def timeout_check(timeout_id):
-    return json.dumps(check_in_timers[timeout_id].check_in())
+    return (json.dumps(check_in_timers[timeout_id].check_in()), {'Content-Type': 'application/json'})
 
 @app.route('/timeout/<timeout_id>/reset')
 def reset(timeout_id):
